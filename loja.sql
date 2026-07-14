@@ -43,7 +43,8 @@ SELECT * FROM tb_produto WHERE preco > 500.00;
 UPDATE tb_produto SET preco = 100.00 WHERE id = 5;
 
 -- Imaginando em um cenario onde o estoque de um produto chega a zero! (soft delete) 
-
+-- Pensando em um database com estoque, poderiamos fazer uma verificação para o estoque não ficar negativo
+-- Mas pensando em praticidade deixei padrão 10,
 ALTER TABLE tb_produto ADD estoque INT DEFAULT 10;
 
 UPDATE tb_produto SET estoque = 0 WHERE id = 2;
